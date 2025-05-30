@@ -24,15 +24,12 @@ def devops_agent(cpu_usage):
 # Hàm mô phỏng môi trường DevOps
 def simulate_devops_environment():
     print("Khởi động Agent Giám sát CPU DevOps...")
-    while KeyboardInterrupt:
+    for _ in range(10):
         cpu_usage = get_cpu_usage()
         action = devops_agent(cpu_usage)
         print(f"Mức sử dụng CPU: {cpu_usage:.1f}% -> Hành động: {action}")
         time.sleep(2)  # Đợi 2 giây giữa các lần kiểm tra
 
-# # Chạy mô phỏng
-# if __name__ == "__main__":
-#     try:
-#         simulate_devops_environment()
-#     except KeyboardInterrupt:
-#         print("Giám sát bị dừng bởi người dùng.")
+# Chạy mô phỏng
+if __name__ == "__main__":
+    simulate_devops_environment()
